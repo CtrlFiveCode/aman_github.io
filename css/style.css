@@ -73,8 +73,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
 }
 
 /* Navigation Links */
@@ -92,6 +92,12 @@ nav ul li a {
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: .4s;
+}
+
+/* Add padding to icons in navigation links */
+nav ul li a i {
+    padding-right: 10px;
+    /* Adjust as needed */
 }
 
 /* Navigation Link Hover Effect */
@@ -144,6 +150,8 @@ nav ul li.btn:hover a {
     line-height: 1;
     color: white;
     margin: 0px 0px 45px;
+    font-weight: normal;
+    /* Ensure normal font weight */
 }
 
 /* Paragraph Styles */
@@ -204,7 +212,7 @@ nav ul li.btn:hover a {
 .content .social {
     position: relative;
     z-index: 2;
-    margin-top: 200px;
+    margin-top: 100px;
     padding-bottom: 40px;
 }
 
@@ -223,17 +231,326 @@ nav ul li.btn:hover a {
     color: white;
 }
 
+/* Review Scores */
+.review-score {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f5dca8;
+    margin-top: 8px;
+}
+
+/* Review Scores */
+.review-score {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f5dca8;
+    margin-top: 8px;
+}
+
+/* Reviews Section */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 50%;
+    /* Adjust the max-width as per your design */
+    padding-right: 100px;
+    /* Ensure space from the image */
+    position: relative;
+    /* Ensure it is positioned relative to its normal position */
+    z-index: 2;
+    /* Higher z-index to be in front of the image */
+}
+
+.review {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    /* Ensure reviews don't exceed the container width */
+    backdrop-filter: blur(10px);
+    /* Apply blur effect */
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent background */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    /* Light border for better visibility */
+}
+
+.review h3 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
 /* Image Section */
 .image {
     position: absolute;
+    top: 140px;
+    /* Adjust as needed to align with content */
+    right: -25%;
     width: 100%;
-    height: 85%;
-    bottom: 0;
-    right: -10%;
-    text-align: right;
+    /* Occupy full width of its container */
+    max-width: 100%;
+    /* Ensure image doesn't exceed 100% of the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    transform: scale(1);
+    /* Double the size of the image */
+    transform-origin: bottom right;
+    /* Scale from bottom right corner */
+    z-index: 1;
 }
 
-/* Image Styles */
+/* Ensure the image is responsive */
 .image img {
-    height: 100%;    
+    width: 100%;
+    height: auto;
+}
+
+/* Image Section */
+.image2 {
+    position: absolute;
+    top: 140px;
+    /* Adjust as needed to align with content */
+    right: 0%;
+    width: 100%;
+    /* Occupy full width of its container */
+    max-width: 100%;
+    /* Ensure image doesn't exceed 100% of the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    transform: scale(1);
+    /* Double the size of the image */
+    transform-origin: bottom right;
+    /* Scale from bottom right corner */
+    z-index: 1;
+    /* Lower z-index to be behind the reviews */
+}
+
+/* Ensure the image is responsive */
+.image2 img {
+    width: 100%;
+    height: auto;
+}
+
+/* Image Section */
+.image3 {
+    position: absolute;
+    top: 100px;
+    /* Adjust as needed to align with content */
+    right: 0%;
+    width: 100%;
+    /* Occupy full width of its container */
+    max-width: 100%;
+    /* Ensure image doesn't exceed 100% of the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    transform: scale(0.75);
+    /* Double the size of the image */
+    transform-origin: top right;
+    /* Scale from bottom right corner */
+    z-index: 1;
+    /* Lower z-index to be behind the contact form */
+}
+
+/* Ensure the image is responsive */
+.image3 img {
+    width: 100%;
+    height: auto;
+}
+
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Individual Gallery Item */
+.responsive {
+    flex: 1 1 calc(33.33% - 20px);
+    /* Ensure three images per row */
+    max-width: calc(33.33% - 20px);
+    /* Ensure max-width of each item */
+    height: auto;
+    /* Allow height to adjust based on content */
+    position: relative;
+    /* Relative positioning for absolute children */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    /* Add some space below each item */
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+.gallery {
+    border: 5px solid #191919;
+    /* Fancy border */
+    padding: 0;
+    /* Remove padding to avoid offset */
+    text-align: center;
+    border-radius: 20px;
+    /* Rounded corners for the outer border */
+    position: relative;
+    /* Ensure relative positioning */
+    overflow: hidden;
+    /* Ensure content doesn't overflow */
+}
+
+.gallery:hover img {
+    transform: scale(1.1);
+    /* Slightly zoom in the image on hover */
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    /* Maintain aspect ratio */
+    display: block;
+    /* Ensure the image doesn't create extra space */
+    transition: transform 0.75s ease;
+    /* Transition for transform property */
+}
+
+.gallery .desc {
+    position: absolute;
+    bottom: -100%;
+    /* Initially hide desc box below the image */
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    box-sizing: border-box;
+    /* Ensure padding is included in the element's width and height */
+    transition: bottom 0.75s ease;
+    /* Transition for bottom property */
+}
+
+.gallery:hover .desc {
+    bottom: 0;
+    /* Move desc box down and show it on hover */
+}
+
+.gallery .desc h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.gallery .desc p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+@media only screen and (max-width: 1200px) {
+    .responsive {
+        flex: 1 1 calc(50% - 20px);
+        /* Ensure two images per row on smaller screens */
+        max-width: calc(50% - 20px);
+        /* Ensure max-width of each item */
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        flex: 1 1 calc(50% - 20px);
+        /* Ensure two images per row on smaller screens */
+        max-width: calc(50% - 20px);
+        /* Ensure max-width of each item */
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        flex: 1 1 100%;
+        /* Ensure one image per row on the smallest screens */
+        max-width: 100%;
+        /* Ensure max-width of each item */
+    }
+
+    .gallery .desc {
+        position: relative;
+        /* Change position to relative on smaller screens */
+        background-color: transparent;
+        /* Remove background color */
+        padding: 0;
+        /* Remove padding */
+        margin-top: auto;
+        /* Push to the bottom */
+        bottom: 0;
+        /* Reset bottom position */
+        transition: none;
+        /* Remove transition on smaller screens */
+    }
+}
+
+/* Contact Form Styles */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    margin-top: 40px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    /* Ensure it's positioned above the image */
+    z-index: 2;
+    /* Higher z-index to be in front of image3 */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #d32f2f;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #b71c1c;
 }
